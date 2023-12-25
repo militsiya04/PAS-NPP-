@@ -10,7 +10,6 @@ import Entities.Worker;
 class Manager {
     private static final String URL = "jdbc:sqlite:test.db";
 
-    // Метод для создания таблицы, если она не существует
     public static void createTable() {
         try (Connection connection = DriverManager.getConnection(URL)) {
             String sql = "CREATE TABLE IF NOT EXISTS admin (id INTEGER PRIMARY KEY, username TEXT, password TEXT)";
@@ -29,7 +28,6 @@ class Manager {
         }
     }
 
-    // Метод для сохранения Admin
     public static void saveAdmin(Admin admin) {
         try (Connection connection = DriverManager.getConnection(URL)) {
             String sql = "INSERT INTO admin (id, username, password) VALUES (?, ?, ?)";
@@ -46,7 +44,6 @@ class Manager {
         }
     }
 
-    // Метод для сохранения Worker
     public static void saveWorker(Worker worker) {
         try (Connection connection = DriverManager.getConnection(URL)) {
             String sql = "INSERT INTO worker (id, first_name, last_name, password) VALUES (?, ?, ?, ?)";
