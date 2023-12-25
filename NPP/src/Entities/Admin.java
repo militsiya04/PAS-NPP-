@@ -11,7 +11,6 @@ public class Admin {
         this.password = password;
     }
 
-    // Гетеры
     public int getId() {
         return id;
     }
