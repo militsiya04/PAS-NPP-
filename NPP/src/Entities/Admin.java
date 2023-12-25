@@ -36,7 +36,7 @@ public class Admin {
         this.password = password;
     }
 
-    public Worker createWorker(int id, String firstName, String lastName, String password) {
+    public static Worker createWorker(int id, String firstName, String lastName, String password) {
         return Worker.createWorker(id, firstName, lastName, password);
     }
 }
