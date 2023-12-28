@@ -7,11 +7,11 @@ import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-public class iApartmentRepository implements IRepository<Apartment> {
+public class IApartmentRepository implements IRepository<Apartment> {
 
     private HashMap<Integer, Apartment> apartments;
 
-    public iApartmentRepository() {
+    public IApartmentRepository() {
         apartments = new HashMap<>();
     }
 

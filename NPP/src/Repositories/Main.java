@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        IRepository<Apartment> ApartmentRepository = new iApartmentRepository();
+        IRepository<Apartment> ApartmentRepository = new IApartmentRepository();
         Street street = new Street(12, "Test");
         Building building = new Building(13, 2);
         Street street2 = new Street(14, "Test2");
