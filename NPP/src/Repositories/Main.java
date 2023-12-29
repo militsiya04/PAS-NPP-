@@ -3,12 +3,18 @@ package Repositories;
 import Entities.Apartment;
 import Entities.Building;
 import Entities.Street;
+import Repositories.Impl.BaseRepository;
 
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        IRepository<Apartment> ApartmentRepository = new IApartmentRepository();
+        IRepository<Apartment> ApartmentRepository = new BaseRepository<Apartment>() {
+            @Override
+            protected int getItemId(Apartment item) {
+                return item.getId();
+            }
+        };
         Street street = new Street(12, "Test");
         Building building = new Building(13, 2);
         Street street2 = new Street(14, "Test2");
@@ -24,7 +30,7 @@ public class Main {
         System.out.println("Apartments by ID: " + apartmentById);
 
         List<Apartment> apartmentWithNameTest = ApartmentRepository.find(apartment -> apartment.getStreet().getName().equals("Test"));
-        System.out.println("Apartments with name Alice: " + apartmentWithNameTest);
+        System.out.println("Apartments with name Test: " + apartmentWithNameTest);
 
     }
 }
