@@ -1,11 +1,14 @@
 package UnitOfWork;
 
+import Entities.Apartment;
+import Repositories.IRepository;
 import Repositories.Impl.ApartmentRepository;
 import Repositories.Impl.StreetRepository;
 
 public interface IUnitOfWork {
-    ApartmentRepository getApartments();
-    StreetRepository getStreets();  // Замініть IStreetRepository на інтерфейс вашого репозиторію для Street
-    // Додайте інші інтерфейси репозиторіїв, якщо потрібно
+
+    Apartment getApartment(IRepository<Apartment> apartmentRepository, int id);
+
+    StreetRepository getStreets();
     void save();
 }

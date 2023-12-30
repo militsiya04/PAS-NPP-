@@ -21,7 +21,6 @@ public class ApartmentRepositoryTest {
         Street street2 = new Street(14, "Test2");
         Building building2 = new Building(15, 6);
 
-
         //create
         ApartmentRepository.create(new Apartment(1,23, street, building));
         ApartmentRepository.create(new Apartment(2, 24, street2, building2));
